@@ -1,0 +1,85 @@
+<section id="navbar">
+    <nav class="navbar navbar-expand-lg order-last order-lg-0">
+        <a class="navbar-brand justify-content-center" href="#"><i class="fa-solid fa-user-doctor fa-lg p-2"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket fa-xl p-2"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+<div class="container mt-4">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-9">
+            <form (ngSubmit)="onSubmit()">
+                <div class="card p-4 mt-3">
+                    <h3 class="heading mt-5 text-center">Por favor, ingrese el DNI del paciente o su Nombre y Apellido
+                        completo</h3>
+                    <div class="d-flex justify-content-center px-5">
+                        <div class="search">
+                            <input type="text" class="search-input" [(ngModel)]="searchTerm" placeholder="Buscar..."
+                                name="searchTerm">
+                            <a class="search-icon" (click)="buscarPacientes(searchTerm, searchTerm)"> <i class="fa fa-search"></i>
+                            </a> </div>
+                        </div>
+                        <div class="row mt-4 g-1 px-4 mb-5">
+                            <div class="col-md-2">
+                                <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                        src="https://i.imgur.com/Mb8kaPV.png" width="50">
+                                    <div class="text-center mg-text"> <span class="mg-text">Crear</span> </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                        src="https://i.imgur.com/ueLEPGq.png" width="50">
+                                    <div class="text-center mg-text"> <span class="mg-text">Actualizar</span> </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                        src="https://i.imgur.com/tmqv0Eq.png" width="50">
+                                    <div class="text-center mg-text"> <span class="mg-text">Rapido</span> </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                        src="https://i.imgur.com/D0Sm15i.png" width="50">
+                                    <div class="text-center mg-text"> <span class="mg-text">Online</span> </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                        src="https://i.imgur.com/Z7BJ8Po.png" width="50">
+                                    <div class="text-center mg-text"> <span class="mg-text">Todo el día</span> </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                        src="https://i.imgur.com/YLsQrn3.png" width="50">
+                                    <div class="text-center mg-text"> <span class="mg-text">Consultar</span> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Lista de pacientes encontrados -->
+<ul *ngIf="pacientesEncontrados && pacientesEncontrados.length > 0">
+    <li *ngFor="let paciente of pacientesEncontrados">
+        {{ paciente.nombre }} {{ paciente.apellido }} - DNI: {{ paciente.dni }}
+    </li>
+</ul>
+
+<!-- Mostrar mensaje de error y botón para crear nuevo paciente -->
+<div *ngIf="mostrarError">
+    <p>{{ errorMensaje }}</p>
+    <button (click)="crearNuevoPaciente()">Crear nuevo paciente</button>
+  </div>
