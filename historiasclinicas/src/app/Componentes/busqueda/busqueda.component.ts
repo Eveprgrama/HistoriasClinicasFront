@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PacienteDTO } from 'src/app/model/paciente-dto';
 import { PacienteService } from 'src/app/service/paciente.service';
 import { FormsModule } from '@angular/forms';
+import { CrearPacienteComponent } from '../modal/crear-paciente/crear-paciente.component';
 
 @Component({
   selector: 'app-busqueda',
@@ -14,10 +15,11 @@ export class BusquedaComponent implements OnInit{
   pacientesEncontrados!: PacienteDTO[];  
  mostrarError: boolean =  false;
  errorMensaje: string = "";
+ showModal = false; 
+ @ViewChild(CrearPacienteComponent) crearPacienteComponent!: CrearPacienteComponent;
 
   constructor(private pacienteService: PacienteService, public router: Router, activatedroute: ActivatedRoute){}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   // En tu componente
@@ -80,13 +82,5 @@ export class BusquedaComponent implements OnInit{
     // Establecer la variable mostrarError en true para mostrar el mensaje de error
     this.mostrarError = true;
   }
-  
-  crearNuevoPaciente() {
-    // Aquí puedes agregar la lógica para crear un nuevo paciente
-    // Por ejemplo, redirigir a la página de creación de nuevo paciente o abrir un modal de creación de nuevo paciente
-  }
-  
-  
-
-  
+   
 }

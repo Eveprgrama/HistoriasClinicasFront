@@ -1,7 +1,7 @@
 import { HistoriaClinica } from "./historia-clinica";
 
 export class PacienteDTO {
-  id: number;
+  id?: number;
   nombre: string;
   apellido: string;
   dni: string;

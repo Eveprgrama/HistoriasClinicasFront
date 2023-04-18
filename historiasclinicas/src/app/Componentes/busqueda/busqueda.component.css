@@ -304,10 +304,3 @@ a:link {
   margin-right: 20px;
 }
 
-/*Error*/
-.btn.btn-primary{
-  display: flex;
-  justify-self: center;
-  background-color: #536bf6!important;
-  border-radius: 5px;
-}

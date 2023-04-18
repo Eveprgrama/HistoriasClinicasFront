@@ -1,0 +1,42 @@
+.btn.btn-secondary{
+    display: flex;
+    justify-self: center;
+    background-color: #536bf6!important;
+    border-radius: 5px;
+  }
+
+  .btn.btn-primary{
+    display: flex;
+    justify-self: center;
+    background-color: #536bf6!important;
+    border-radius: 5px;
+  }
+
+  .modal{
+    display: flex;
+    justify-items: center;
+    padding: 10px;
+  }
+
+  .modal-header{
+    background-color: #536bf6!important;
+  }
+
+  .label{
+    margin-bottom: 10px; 
+    padding-left: 10px;
+    display:flex;
+    justify-items: center;
+  }
+
+  @media (min-width: 600px) {
+    .modal-lg {
+      width: 600px;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Cambia el valor "2" si quieres más o menos columnas */
+        grid-gap: 5px; /* Cambia el valor "10px" para ajustar el espacio entre los ítems */
+    }
+  }
