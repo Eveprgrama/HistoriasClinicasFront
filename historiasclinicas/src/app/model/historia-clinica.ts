@@ -2,18 +2,21 @@ import { Actualizacion } from "./actualizacion";
 import { ArchivoHistoriaClinica } from "./archivo-historia-clinica";
 import { PacienteDTO } from "./paciente-dto";
 
+
 export class HistoriaClinica {
-    id: number;
+  id?: number;
   fechaCreacion: string;
   enfermedad: string;
   descripcion: string;
   medicacion: string;
-  peso: string;
-  altura: string;
+  droga: string;
+  dosis: string;
+  peso: number;
+  altura: number;
   indicaciones: string;
-  paciente: PacienteDTO;
-  archivosHistoriaClinica: ArchivoHistoriaClinica[];
-  actualizaciones: Actualizacion[];
+  pacienteId: number;
+  actualizaciones: Actualizacion[]; 
+  archivos: ArchivoHistoriaClinica[];
 
   constructor(
     id: number,
@@ -21,23 +24,28 @@ export class HistoriaClinica {
     enfermedad: string,
     descripcion: string,
     medicacion: string,
-    peso: string,
-    altura: string,
+    droga: string,
+    dosis: string,
+    peso: number,
+    altura: number,
     indicaciones: string,
-    paciente: PacienteDTO,
-    archivosHistoriaClinica: ArchivoHistoriaClinica[],
-    actualizaciones: Actualizacion[]
+    pacienteId: number,
+    actualizaciones: Actualizacion[], 
+    archivos: ArchivoHistoriaClinica[]
   ) {
-    this.id = id;
+    this.pacienteId = pacienteId;
+    this.archivos = archivos;
     this.fechaCreacion = fechaCreacion;
     this.enfermedad = enfermedad;
     this.descripcion = descripcion;
     this.medicacion = medicacion;
+    this.droga = droga;
+    this.dosis = dosis;
     this.peso = peso;
     this.altura = altura;
     this.indicaciones = indicaciones;
-    this.paciente = paciente;
-    this.archivosHistoriaClinica = archivosHistoriaClinica;
     this.actualizaciones = actualizaciones;
   }
 }
+
+  

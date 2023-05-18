@@ -15,9 +15,14 @@ export class PacienteService {
     obtenerTodos(): Observable<PacienteDTO[]> {
       return this.http.get<PacienteDTO[]>(`${this.baseUrl}/todos`);
     }
+
+    buscarPorId(id: number): Observable<PacienteDTO> {
+      return this.http.get<PacienteDTO>(`${this.baseUrl}/${id}`);
+    }
+  
   
   buscarPorDni(dni: string): Observable<PacienteDTO> {
-    return this.http.get<PacienteDTO>(`${this.baseUrl}/${dni}`);
+    return this.http.get<PacienteDTO>(`${this.baseUrl}/buscar/${dni}`);
   }
 
   buscarPorNombreYApellido(nombre: string, apellido: string): Observable<PacienteDTO[]> {

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default no-margin" id="navbar">
+     <ul class="nav navbar-nav">
+        <li class="active">
+           <button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+           </button>
+        </li>
+     </ul>
+  <!-- bs-example-navbar-collapse-1 -->
+</nav>
+<div id="wrapper">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+     <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+        <li class="active">
+           <a href="#"><span class="fa-stack fa-lg"><i class="fa-solid fa-user-doctor fa-stack-1x "></i></span> Médico</a>
+           <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+              <li><a href="#">{{medicos.nombre}}</a></li>
+              <li><a href="#">{{medicos.apellido}}</a></li>
+           </ul>
+        </li>
+        <li>
+           <a href="#"><span class="fa-stack fa-lg"><i class="fa-solid fa-note-sticky fa-stack-1x "></i></span>Matrícula</a>
+           <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+              <li><a href="#"><span class="fa-stack fa-lg"><i class="fa-solid fa-check fa-stack-1x "></i></span>{{medicos.matricula}}</a></li>
+           </ul>
+        </li>
+        <li>
+           <a href="#"><span class="fa-stack fa-lg"><i class="fa-solid fa-prescription-bottle-medical fa-stack-1x "></i></span>{{medicos.especialidad}}</a>
+        </li>
+        <li>
+           <a href="#"> <span class="fa-stack fa-lg"><i class="fa-solid fa-folder fa-stack-1x "></i></span>Archivos</a>
+        </li>
+        <li>
+           <a href="#"><span class="fa-stack fa-lg"><i class="fa-solid fa-magnifying-glass fa-stack-1x "></i></span>Buscador</a>
+        </li>
+        <li id="logout">
+           <a href="#"><span class="fa-stack fa-lg"><i class="fa-solid fa-right-from-bracket fa-stack-1x "></i></span>Cerrar sesión</a>
+        </li>
+     </ul>
+  </div>
+    
+          

@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistromedicoComponent } from './Componentes/registromedico/registromedico.component';
 import { CrearPacienteComponent } from './Componentes/modal/crear-paciente/crear-paciente.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PacienteService } from './service/paciente.service';
+import { ActualizacionComponent } from './Componentes/actualizacion/actualizacion.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MedicoComponent,
     BusquedaComponent,
     RegistromedicoComponent,
-    CrearPacienteComponent
+    CrearPacienteComponent,
+    ActualizacionComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PacienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
