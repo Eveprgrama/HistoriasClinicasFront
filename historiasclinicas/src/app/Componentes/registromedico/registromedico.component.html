@@ -18,9 +18,9 @@
               <form [formGroup]="formulario" (ngSubmit)="crearHistoriaClinica()">
                 <div class="form-group my-3">
                   <small class="form-text text-danger"
-                      *ngIf="formulario.get('fechaCreacion').invalid && formulario.get('fechaCreacion').touched">
-                      Este campo es obligatorio
-                    </small>
+                    *ngIf="formulario.get('fechaCreacion').invalid && formulario.get('fechaCreacion').touched">
+                    Este campo es obligatorio
+                  </small>
                   <label for="fechaCreacion">Fecha de creación:</label>
                   <div class="input-group">
                     <input type="date" class="form-control" #fechaCreacionInput id="fechaCreacion"
@@ -47,20 +47,31 @@
                     <input type="number" class="form-control" id="altura" formControlName="altura" />
                   </div>
                 </div>
-                <div class="form-group my-3">
-                  <label>Medicación:</label>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <input type="text" class="form-control" placeholder="Nombre del medicamento"
-                        formControlName="medicacion" />
-                    </div>
-                    <div class="col-md-4">
-                      <input type="text" class="form-control" placeholder="Droga" formControlName="droga" />
-                    </div>
-                    <div class="col-md-4">
-                      <input type="text" class="form-control" placeholder="Miligramos" formControlName="dosis" />
+                <!-- Medicaciones -->
+                <div formArrayName="medicacion">
+                  <div *ngFor="let medicacion of medicacionArray.controls; let i = index" [formGroupName]="i">
+                    <label>Medicación:</label>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Nombre del medicamento"
+                          formControlName="nombre" />
+                      </div>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Droga" formControlName="droga" />
+                      </div>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Miligramos" formControlName="dosis" />
+                      </div>
+                      <div class="col-md-1">
+                        <button type="button" class="btn btn-danger" (click)="quitarMedicacion(i)">Eliminar</button>
+                      </div>
                     </div>
                   </div>
+                </div>
+
+                <div class="form-group">
+                  <button type="button" class="btn btn-primary" (click)="agregarMedicacion()">Agregar
+                    medicación</button>
                 </div>
                 <div class="form-group my-3">
                   <label for="descripcion">Descripción:</label>

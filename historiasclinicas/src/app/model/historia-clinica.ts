@@ -1,5 +1,6 @@
 import { Actualizacion } from "./actualizacion";
 import { ArchivoHistoriaClinica } from "./archivo-historia-clinica";
+import { Medicacion } from "./medicacion";
 import { PacienteDTO } from "./paciente-dto";
 
 
@@ -8,9 +9,7 @@ export class HistoriaClinica {
   fechaCreacion: string;
   enfermedad: string;
   descripcion: string;
-  medicacion: string;
-  droga: string;
-  dosis: string;
+  medicacion: Medicacion[];
   peso: number;
   altura: number;
   indicaciones: string;
@@ -23,9 +22,7 @@ export class HistoriaClinica {
     fechaCreacion: string,
     enfermedad: string,
     descripcion: string,
-    medicacion: string,
-    droga: string,
-    dosis: string,
+    medicacion: Medicacion[],
     peso: number,
     altura: number,
     indicaciones: string,
@@ -39,8 +36,6 @@ export class HistoriaClinica {
     this.enfermedad = enfermedad;
     this.descripcion = descripcion;
     this.medicacion = medicacion;
-    this.droga = droga;
-    this.dosis = dosis;
     this.peso = peso;
     this.altura = altura;
     this.indicaciones = indicaciones;
